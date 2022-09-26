@@ -31,7 +31,7 @@ makeCacheMatrix <- function(x = matrix()) {
         x <<- y
         inverse_matrix <<- NULL
     }
-
+    
     ## get x matrix
     get <- function() x
     
@@ -48,7 +48,7 @@ makeCacheMatrix <- function(x = matrix()) {
                           , get=get
                           , setInverseMatrix=setInverseMatrix
                           , getInverseMatrix=getInverseMatrix
-                          )
+    )
     
     return(return_vector)
 }
@@ -76,7 +76,7 @@ cacheSolve <- function(x, ...) {
         inverse_matrix <- solve(data, ...)
         x$setInverseMatrix(inverse_matrix)
     }
-
+    
     ## Return a matrix that is the inverse of 'x' matrix
     return(inverse_matrix)
 }
@@ -89,14 +89,14 @@ cacheSolve <- function(x, ...) {
 x <- as.matrix(cbind(c(1, 0, -1)
                      , c(1, 2, 1)
                      , c(3, 4, 0)
-                ))
+))
 class(x)
 # [1] "matrix" "array"
 
 ## get determinant of a square matrix 
 det(x)  
 # [1] -2
- 
+
 solve(x)
 
 ## call makeCacheMatrix()
@@ -126,8 +126,8 @@ cacheSolve(inv_mat)
 
 ## 2nd square matrix
 x2 <- as.matrix(cbind(c(1, 1, 0)
-                     , c(0, 1, 1)
-                     , c(1, 1, 1)
+                      , c(0, 1, 1)
+                      , c(1, 1, 1)
 ))
 
 det(x2)
